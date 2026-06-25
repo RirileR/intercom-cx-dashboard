@@ -1,0 +1,6 @@
+.env
+*.html
+__pycache__/
+*.pyc
+data_raw.json
+.DS_Store
