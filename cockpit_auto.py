@@ -25,6 +25,7 @@ Usage :
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from collections import defaultdict
@@ -44,6 +45,18 @@ TOP_THEMES = 8
 JOURS = ["lun", "mar", "mer", "jeu", "ven", "sam", "dim"]
 MOIS = ["", "janv", "févr", "mars", "avr", "mai", "juin",
         "juil", "août", "sept", "oct", "nov", "déc"]
+
+# Mots vides FR + bruit, ignorés par le radar à incidents
+STOP = set("""
+le la les un une des du de da au aux et ou ni mais donc or car que qui quoi dont ou
+a as ai ont est sont été être avoir fait faire pour par sur sous avec sans dans en
+ce cet cette ces mon ma mes ton ta tes son sa ses notre nos votre vos leur leurs
+je tu il elle on nous vous ils elles me te se y lui leur moi toi soi
+ne pas plus moins tres très bien mal si comme aussi alors quand comment pourquoi
+mon abby bonjour merci salut svp stp cordialement madame monsieur
+suite demande question probleme problème souci besoin aide help info impossible
+mes mon avoir avez avons puis peux peut faut
+""".split())
 
 
 def load_env():
@@ -122,8 +135,20 @@ def aggregate(convs, weeks_n):
 
     def blank():
         return {"total": 0, "nonqual": 0, "bug": 0, "neg": 0, "chat": 0,
-                "themes": defaultdict(int), "daily": [0] * 7}
+                "themes": defaultdict(int), "daily": [0] * 7,
+                # vue « charge humaine » (conversations ouvertes / traitées par un humain)
+                "hum": 0, "hum_bug": 0, "hum_themes": defaultdict(int),
+                # radar incidents : compte des bigrammes de titres
+                "bigrams": defaultdict(int)}
     W = {k: blank() for k in keys}
+
+    def is_bug(nature):
+        return "bug" in nature
+
+    def title_bigrams(text):
+        toks = [w for w in re.findall(r"[0-9a-zàâäéèêëîïôöùûüç]+", (text or "").lower())
+                if len(w) >= 3 and w not in STOP]
+        return [f"{toks[i]} {toks[i+1]}" for i in range(len(toks) - 1)]
 
     for c in convs:
         ts = c.get("created_at", 0)
@@ -139,6 +164,12 @@ def aggregate(convs, weeks_n):
         nature = (ca.get(ATTR_NATURE) or "").lower()
         senti = (ca.get(ATTR_SENTIMENT) or "").lower()
         stype = ((c.get("source") or {}).get("type") or "").lower()
+        stats = c.get("statistics") or {}
+        # « charge humaine » = un agent humain a réellement répondu.
+        # (On n'utilise PAS admin_assignee_id ni open : le bot "operator" est
+        #  auto-assigné à presque tout, ce qui fausserait la mesure.)
+        human = bool(stats.get("first_admin_reply_at"))
+        title = ca.get("AI Title") or c.get("title") or ""
 
         p["total"] += 1
         p["daily"][dt.weekday()] += 1
@@ -147,12 +178,35 @@ def aggregate(convs, weeks_n):
             p["themes"]["(non qualifié)"] += 1
         else:
             p["themes"][theme if theme in top else "Autres"] += 1
-        if "bug" in nature or "problème" in nature or "probleme" in nature:
+        if is_bug(nature):
             p["bug"] += 1
         if senti.startswith("nég") or senti.startswith("neg") or "négatif" in senti:
             p["neg"] += 1
         if stype in ("conversation", "chat"):
             p["chat"] += 1
+        if human:
+            p["hum"] += 1
+            if is_bug(nature):
+                p["hum_bug"] += 1
+            lab = theme if (theme != NON_QUAL and theme in top) else (
+                "Autres" if theme != NON_QUAL else "(non qualifié)")
+            p["hum_themes"][lab] += 1
+        for bg in set(title_bigrams(title)):   # set : 1 conv = 1 vote par bigramme
+            p["bigrams"][bg] += 1
+
+    # médiane hebdo de chaque bigramme, pour repérer les pics (« sujet émergent »)
+    all_bg = set()
+    for p in W.values():
+        all_bg.update(p["bigrams"].keys())
+
+    def median(vals):
+        s = sorted(vals)
+        n = len(s)
+        return s[n // 2] if n % 2 else (s[n // 2 - 1] + s[n // 2]) / 2
+
+    bg_median = {}
+    for bg in all_bg:
+        bg_median[bg] = median([W[k]["bigrams"].get(bg, 0) for k in keys])
 
     weeks = []
     last_idx = len(keys) - 1
@@ -162,11 +216,26 @@ def aggregate(convs, weeks_n):
         d = datetime.strptime(k, "%Y-%m-%d")
         themes = sorted(((name, n) for name, n in p["themes"].items() if name != "(non qualifié)"),
                         key=lambda x: x[1], reverse=True)
+        hum_themes = sorted(((name, n) for name, n in p["hum_themes"].items()),
+                            key=lambda x: x[1], reverse=True)
         bugp, negp = pct(p["bug"], t), pct(p["neg"], t)
+        hum_bug_pct = pct(p["hum_bug"], p["hum"])
+
+        # radar : bigrammes les plus fréquents de la semaine (≥ 4 conv), avec drapeau « pic »
+        radar = []
+        for bg, n in sorted(p["bigrams"].items(), key=lambda x: x[1], reverse=True):
+            if n < 4:
+                continue
+            med = bg_median.get(bg, 0)
+            spike = n >= 4 and n >= 2 * (med if med else 0.5)
+            radar.append({"label": bg, "n": n, "spike": bool(spike)})
+            if len(radar) >= 8:
+                break
+
         partial = (i == last_idx)
         if partial:
             wtype = "partial"
-        elif bugp >= 25:
+        elif hum_bug_pct >= 35 or negp >= 15:
             wtype = "peak"
         else:
             wtype = "norm"
@@ -181,6 +250,9 @@ def aggregate(convs, weeks_n):
             "bug": bugp, "neg": negp,
             "chat": pct(p["chat"], t), "nonqual": pct(p["nonqual"], t),
             "themes": [[name, n] for name, n in themes[:TOP_THEMES]],
+            "humTotal": p["hum"], "humBug": hum_bug_pct,
+            "humThemes": [[name, n] for name, n in hum_themes[:6]],
+            "radar": radar,
         })
     return weeks
 
@@ -266,7 +338,7 @@ header h1{font-size:22px;font-weight:600}header .sub{font-size:13px;color:#7c6e8
   <div class="panel"><h2>Volume par semaine</h2>
     <div class="ph">Clique sur une barre, ou choisis la semaine dans le menu ci-dessous.</div>
     <div class="chart" id="chart"></div>
-    <div class="legend"><span class="l-norm">Semaine normale</span><span class="l-peak">Tension technique (bugs ≥ 25 %)</span><span class="l-part">Semaine en cours (incomplète)</span></div>
+    <div class="legend"><span class="l-norm">Semaine normale</span><span class="l-peak">Tension technique (backlog bugs ≥ 35 % ou négatif ≥ 15 %)</span><span class="l-part">Semaine en cours (incomplète)</span></div>
   </div>
   <div class="panel" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <label for="weekSel" style="font-size:13px;font-weight:600;color:#4a4458">Semaine à détailler :</label>
@@ -298,9 +370,10 @@ function fillWeekSel(){let o=`<option value="both">⭐ Les 2 semaines marquantes
   $('#weekSel').innerHTML=o;$('#weekSel').value=selected;}
 function bars(arr){const mx=Math.max.apply(null,arr.map(r=>r[1]))||1;
   return arr.map(r=>`<div class="row"><span class="name">${r[0]}</span><span class="bar2" style="width:${Math.round(r[1]/mx*200)}px"></span><span class="n">${r[1]}</span></div>`).join('');}
-function autoNote(w){if(w.bug>=25)return `Volume tiré par des <b>problèmes techniques</b> (${w.bug}% de bugs, ${w.neg}% de sentiment négatif). Action : corriger le produit et communiquer sur les incidents.`;
-  if(w.bug<15)return `Peu de bugs (${w.bug}%) : volume tiré par des <b>questions d'usage</b>. Action : FAQ, articles d'aide, pédagogie.`;
-  return `Semaine mixte : ${w.bug}% de bugs, ${w.neg}% de sentiment négatif.`;}
+function autoNote(w){
+  if(w.humBug>=35||w.neg>=15)return `<b>Tension technique</b> : ${w.bug}% de bugs sur tout le volume, mais <b>${w.humBug}% de la charge humaine</b> (conversations escaladées) sont des bugs, et ${w.neg}% de sentiment négatif. Action : corriger le produit et communiquer sur les incidents.`;
+  if(w.bug<15&&w.humBug<25)return `Peu de bugs (${w.bug}% global, ${w.humBug}% du backlog) : volume tiré par des <b>questions d'usage</b>. Action : FAQ, articles d'aide, pédagogie.`;
+  return `Semaine mixte : ${w.bug}% de bugs (global), ${w.humBug}% du backlog, ${w.neg}% de sentiment négatif.`;}
 function badge(w){if(w.partial)return '<span class="badge b-part">en cours</span>';
   if(w.type==='peak')return '<span class="badge b-tech">tension technique</span>';return '<span class="badge b-norm">normale</span>';}
 function weekPanel(w){
@@ -316,7 +389,20 @@ function weekPanel(w){
   h+=`<div class="sect-t">Volume jour par jour</div><div class="chart" style="height:160px">`+
     w.daily.labels.map((l,i)=>{const v=w.daily.values[i];const pk=v===mx&&v>0;
       return `<div class="col ${pk?'peak':''}"><div class="v">${v}</div><div class="bar" style="height:${Math.round(v/mx*120)}px"></div><div class="l">${l}</div></div>`;}).join('')+`</div>`;
-  if(w.themes.length){h+=`<div class="sect-t">Top thèmes</div>`+bars(w.themes);}
+  if(w.themes.length){h+=`<div class="sect-t">Top thèmes (tout le volume)</div>`+bars(w.themes);}
+  // --- Vue charge humaine / backlog ---
+  h+=`<div class="sect-t">Charge humaine — conversations où un agent a répondu</div>`;
+  h+=`<div class="ph" style="margin:-4px 0 10px">${w.humTotal.toLocaleString('fr-FR')} conversations ont mobilisé un agent humain (Fin a géré le reste seul). Voilà de quoi elles sont faites — c'est ici que les bugs ressortent.</div>`;
+  h+=`<div class="cards"><div class="kc"><div class="lab">Bugs dans le backlog</div><div class="val ${w.humBug>=35?'alert':(w.humBug<20?'ok':'')}">${w.humBug} %</div><div class="hint">vs ${w.bug}% sur tout le volume</div></div></div>`;
+  if(w.humThemes.length){h+=bars(w.humThemes);}
+  // --- Radar à incidents ---
+  h+=`<div class="sect-t">Radar à incidents — sujets récurrents de la semaine</div>`;
+  if(w.radar&&w.radar.length){
+    h+=`<div style="display:flex;flex-wrap:wrap;gap:8px">`+w.radar.map(r=>{
+      const c=r.spike?'background:#fdf3f2;border:1px solid #f3d9d6;color:#c0392b':'background:#faf9fc;border:1px solid #ece8f0;color:#4a4458';
+      return `<span style="font-size:12.5px;padding:5px 11px;border-radius:20px;${c}">${r.spike?'🔺 ':''}${r.label} <b>· ${r.n}</b></span>`;}).join('')+`</div>`;
+    h+=`<div class="ph" style="margin-top:8px">🔺 = sujet en forte hausse vs les autres semaines (incident probable). Détecté sur les titres des conversations.</div>`;
+  } else { h+=`<div class="ph">Aucun sujet ne ressort particulièrement cette semaine.</div>`; }
   h+=`<div class="note">${autoNote(w)}</div></div>`;return h;}
 function renderDetail(){
   if(selected==='both'){$('#detail').innerHTML=KEYS_BOTH.map(k=>weekPanel(WEEKS.find(w=>w.key===k))).join('');}
@@ -324,11 +410,14 @@ function renderDetail(){
 function fillSelectors(){const o=WEEKS.map(w=>`<option value="${w.key}">Semaine du ${w.label}</option>`).join('');
   $('#selA').innerHTML=o;$('#selB').innerHTML=o;
   $('#selA').value=KEYS_BOTH[0];$('#selB').value=KEYS_BOTH[KEYS_BOTH.length-1];}
-function cmpCard(w){let rows=`<div class="crow"><span>Volume</span><b>${w.total.toLocaleString('fr-FR')}</b></div>`+
-  `<div class="crow"><span>Part de bugs</span><b>${w.bug} %</b></div>`+
+function cmpCard(w){const inc=(w.radar||[]).filter(r=>r.spike).slice(0,2).map(r=>r.label).join(', ')||'—';
+  let rows=`<div class="crow"><span>Volume</span><b>${w.total.toLocaleString('fr-FR')}</b></div>`+
+  `<div class="crow"><span>Bugs (tout le volume)</span><b>${w.bug} %</b></div>`+
+  `<div class="crow"><span>Bugs (charge humaine)</span><b>${w.humBug} %</b></div>`+
   `<div class="crow"><span>Sentiment négatif</span><b>${w.neg} %</b></div>`+
   `<div class="crow"><span>Part en chat</span><b>${w.chat} %</b></div>`+
-  `<div class="crow"><span>Thème n°1</span><b>${w.themes[0]?w.themes[0][0]:'—'}</b></div>`;
+  `<div class="crow"><span>Thème n°1</span><b>${w.themes[0]?w.themes[0][0]:'—'}</b></div>`+
+  `<div class="crow"><span>Incident détecté</span><b>${inc}</b></div>`;
   return `<div class="cc"><h3>Semaine du ${w.label} ${badge(w)}</h3>${rows}<div class="note" style="margin-top:12px">${autoNote(w)}</div></div>`;}
 function renderCmp(){const a=WEEKS.find(w=>w.key===$('#selA').value),b=WEEKS.find(w=>w.key===$('#selB').value);
   $('#cmpBody').innerHTML=cmpCard(a)+cmpCard(b);}
