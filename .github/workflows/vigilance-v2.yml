@@ -1,0 +1,46 @@
+# À placer dans : .github/workflows/vigilance-v2.yml
+name: Vigilance V2 annuaire
+
+on:
+  schedule:
+    # 8h→20h Paris (CEST = UTC+2), lundi + mardi  →  6-18 UTC
+    - cron: "0 6-18 * * 1,2"
+  workflow_dispatch: {}   # permet le déclenchement manuel (test)
+
+permissions:
+  contents: write          # pour committer l'état anti-répétition
+
+concurrency:
+  group: vigilance-v2
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run vigilance
+        env:
+          INTERCOM_TOKEN: ${{ secrets.INTERCOM_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          # CLAUDE_MODEL: claude-sonnet-4-6   # décommente pour forcer une version
+        run: python vigilance_v2.py
+
+      - name: Persister l'état anti-répétition
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain state/)" ]; then
+            git config user.name  "vigilance-bot"
+            git config user.email "actions@github.com"
+            git add state/vigilance_v2_state.json
+            git commit -m "vigilance V2: maj état [skip ci]"
+            git push
+          else
+            echo "Pas de changement d'état."
+          fi
