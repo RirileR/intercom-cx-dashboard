@@ -10,7 +10,7 @@ Usage:
     python vigilance_v2.py --dry-run  # n'écrit rien, ignore le garde-fou date, imprime le diagnostic
 
 Secrets attendus en variables d'env :
-    INTERCOM_TOKEN, ANTHROPIC_API_KEY, SLACK_WEBHOOK_URL
+    INTERCOM_TOKEN, ANTHROPIC_API_KEY, SLACK_BOT_TOKEN
 """
 import os, sys, json, time, html, re, datetime, zoneinfo
 import urllib.request, urllib.error
@@ -22,6 +22,7 @@ LOOKBACK_SECONDS = 2 * 3600                      # fenêtre glissante ~2h
 MIN_CLUSTER = 3                                  # seuil bas de détection
 INTERCOM_WORKSPACE = "hu6d8oic"
 SLACK_PING = "<@U05ANE64S5P> <@U09SVB7343E>"     # Inès + Dim
+SLACK_CHANNEL = "C0BDGANJV1P"                    # #cx-incidents
 STATE_PATH = "state/vigilance_v2_state.json"
 CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")  # TODO: vérifier la string exacte
 INTERCOM_VERSION = os.environ.get("INTERCOM_VERSION", "2.11")
@@ -155,7 +156,7 @@ def load_state(today):
             return st
     except Exception:
         pass
-    return {"date": today, "alerted": {}}
+    return {"date": today, "alerted": {}, "threads": {}}
 
 def save_state(st):
     if DRY:
@@ -165,12 +166,27 @@ def save_state(st):
         json.dump(st, f, ensure_ascii=False, indent=2)
 
 # ============================ Slack ============================
-def post_slack(text):
+def slack_headers():
+    return {
+        "Authorization": f"Bearer {os.environ['SLACK_BOT_TOKEN']}",
+        "Content-Type": "application/json; charset=utf-8",
+    }
+
+def post_slack(text, thread_ts=None):
+    """Poste dans #cx-incidents. Si thread_ts est fourni, répond dans le fil."""
     if DRY:
-        print("---- [DRY-RUN] message Slack qui aurait été posté ----\n" + text + "\n----")
-        return
-    _req(os.environ["SLACK_WEBHOOK_URL"], data={"text": text},
-         headers={"Content-Type": "application/json"}, method="POST")
+        tag = "[thread]" if thread_ts else "[nouveau]"
+        print(f"---- [DRY-RUN] {tag} message Slack ----\n{text}\n----")
+        return None
+    payload = {"channel": SLACK_CHANNEL, "text": text}
+    if thread_ts:
+        payload["thread_ts"] = thread_ts
+    resp = _req("https://slack.com/api/chat.postMessage",
+                data=payload, headers=slack_headers(), method="POST")
+    if not resp.get("ok"):
+        print(f"Erreur Slack: {resp.get('error')}", file=sys.stderr)
+        return None
+    return resp.get("ts")
 
 def build_message(inc, convs_by_id, now):
     ids = inc.get("conv_ids", [])
@@ -214,15 +230,23 @@ def main():
     print(f"{len(incidents)} cluster(s) V2 >= {MIN_CLUSTER} détecté(s).")
 
     st = load_state(today)
+    if "threads" not in st:
+        st["threads"] = {}
     for inc in incidents:
         label = inc.get("label") or inc.get("symptom", "?")
         n = len(inc.get("conv_ids", []))
         if n < MIN_CLUSTER:
             continue
         prev = st["alerted"].get(label)
-        # 1ère alerte du jour pour ce cluster, ou volume qui a doublé => on (re)ping
-        if prev is None or n >= prev * 2:
-            post_slack(build_message(inc, convs_by_id, now))
+        thread_ts = st["threads"].get(label)
+        if prev is None:
+            ts = post_slack(build_message(inc, convs_by_id, now))
+            if ts:
+                st["threads"][label] = ts
+            st["alerted"][label] = n
+        elif n >= prev * 2:
+            update = f"⚠️ *Aggravation* — {inc.get('symptom','?')}\n*{n} conv.* maintenant (était {prev}) · {now.strftime('%H:%M')}"
+            post_slack(update, thread_ts=thread_ts)
             st["alerted"][label] = n
         else:
             print(f"Cluster '{label}' déjà signalé (prev={prev}, now={n}) — silencieux.")
