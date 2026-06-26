@@ -17,7 +17,7 @@ import urllib.request, urllib.error
 
 # ----- Constantes métier -----
 PARIS = zoneinfo.ZoneInfo("Europe/Paris")
-LAUNCH_DATES = {"2026-06-26", "2026-06-29", "2026-06-30"}     # garde-fou : la vigilance n'agit que ces jours-là
+LAUNCH_DATES = {"2026-06-29", "2026-06-30"}     # garde-fou : la vigilance n'agit que ces jours-là
 LOOKBACK_SECONDS = 2 * 3600                      # fenêtre glissante ~2h
 MIN_CLUSTER = 3                                  # seuil bas de détection
 INTERCOM_WORKSPACE = "hu6d8oic"
