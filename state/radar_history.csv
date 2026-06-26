@@ -6,3 +6,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-06-25,tva,29,9,Neutre
 2026-06-25,devis,12,10,Neutre
 2026-06-25,compte_creation,18,11,Neutre
+2026-06-25,facturation_electronique_confusion_activation,63,32,3,😐
+2026-06-25,avance_immediate_facturation_blocage,20,17,1,😐
+2026-06-25,abonnement_periode_essai_confusion_blocage,19,11,0,😐
+2026-06-25,facturation_annulation_correction_blocage,17,13,2,😐
+2026-06-25,connexion_urssaf_mandat_blocage,12,11,3,😐
+2026-06-25,connexion_banque_sync_bug,12,11,2,😐
+2026-06-25,numerotation_factures_bug,6,6,1,😐
+2026-06-25,signature_electronique_lien_devis_bug,6,4,2,😠
