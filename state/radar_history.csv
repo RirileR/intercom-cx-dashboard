@@ -1,0 +1,8 @@
+date,sujet,n_conv,n_users,sentiment
+2026-06-25,facturation_electronique,36,19,Neutre
+2026-06-25,urssaf_connexion,10,8,Neutre
+2026-06-25,qonto_bancaire,11,9,Neutre
+2026-06-25,abonnement_paiement,30,22,Neutre
+2026-06-25,tva,29,9,Neutre
+2026-06-25,devis,12,10,Neutre
+2026-06-25,compte_creation,18,11,Neutre
