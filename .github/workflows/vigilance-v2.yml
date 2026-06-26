@@ -3,8 +3,8 @@ name: Vigilance V2 annuaire
 
 on:
   schedule:
-    # 8h→20h Paris (CEST = UTC+2), lundi + mardi  →  6-18 UTC
-    - cron: "0 6-18 * * 1,2"
+    # 8h→20h Paris (CEST = UTC+2), tous les jours  →  6-18 UTC
+    - cron: "0 6-18 * * *"
   workflow_dispatch: {}   # permet le déclenchement manuel (test)
 
 permissions:
