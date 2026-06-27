@@ -14,3 +14,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-06-25,connexion_banque_sync_bug,12,11,2,😐
 2026-06-25,numerotation_factures_bug,6,6,1,😐
 2026-06-25,signature_electronique_lien_devis_bug,6,4,2,😠
+2026-06-26,activation_facturation_electronique_bug,24,19,16,😐
+2026-06-26,erreur_validation_informations_entreprise,14,9,13,😐
+2026-06-26,confusion_massive_facturation_electronique_obligatoire,62,38,0,😐
+2026-06-26,bug_annulation_correction_factures,13,13,4,😐
+2026-06-26,bug_avance_immediate,10,9,4,😐
+2026-06-26,bug_connexion_compte_bancaire,8,8,0,😐
+2026-06-26,bug_mandat_urssaf_connexion,8,7,2,😐
