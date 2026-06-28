@@ -21,3 +21,7 @@ date,sujet,n_conv,n_users,sentiment
 2026-06-26,bug_avance_immediate,10,9,4,😐
 2026-06-26,bug_connexion_compte_bancaire,8,8,0,😐
 2026-06-26,bug_mandat_urssaf_connexion,8,7,2,😐
+2026-06-27,facturation_electronique_confusion_massive,45,18,1,😐
+2026-06-27,avance_immediate_confusion_urssaf,16,11,2,😐
+2026-06-27,annulation_correction_factures_incomprehension,13,13,0,😐
+2026-06-27,abonnement_downgrade_action,11,7,0,😐
