@@ -25,3 +25,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-06-27,avance_immediate_confusion_urssaf,16,11,2,😐
 2026-06-27,annulation_correction_factures_incomprehension,13,13,0,😐
 2026-06-27,abonnement_downgrade_action,11,7,0,😐
+2026-06-28,facturation_electronique_confusion_massive,45,19,2,😐
+2026-06-28,annulation_correction_factures_blocage,10,9,1,😐
+2026-06-28,abonnement_downgrade_churn_negatif,7,6,0,😠
+2026-06-28,connexion_compte_modification_email,6,5,1,😐
+2026-06-28,suppression_compte_blocage,5,5,0,😐
