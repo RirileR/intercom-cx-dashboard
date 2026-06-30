@@ -30,3 +30,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-06-28,abonnement_downgrade_churn_negatif,7,6,0,😠
 2026-06-28,connexion_compte_modification_email,6,5,1,😐
 2026-06-28,suppression_compte_blocage,5,5,0,😐
+2026-06-29,facturation_electronique_confusion_blocage,42,32,5,😐
+2026-06-29,avance_immediate_facturation_blocage,14,12,6,😐
+2026-06-29,declaration_urssaf_bug_acces,9,9,4,😐
+2026-06-29,connexion_compte_impossible,7,5,2,😐
+2026-06-29,facture_finalisation_envoi_bug,7,7,3,😐
+2026-06-29,synchronisation_bancaire_bug,6,6,1,😐
+2026-06-29,signature_electronique_bug,5,4,4,😐
