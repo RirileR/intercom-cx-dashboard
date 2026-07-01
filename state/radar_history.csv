@@ -37,3 +37,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-06-29,facture_finalisation_envoi_bug,7,7,3,😐
 2026-06-29,synchronisation_bancaire_bug,6,6,1,😐
 2026-06-29,signature_electronique_bug,5,4,4,😐
+2026-06-30,activation_facturation_electronique_blocage,19,12,9,😐
+2026-06-30,avance_immediate_erreur_facturation,13,13,12,😐
+2026-06-30,connexion_urssaf_mandat_bug,9,9,6,😐
+2026-06-30,bug_compte_siret_code_postal,8,8,8,😐
+2026-06-30,bug_modification_suppression_facture,15,14,3,😐
+2026-06-30,bug_avancement_abonnement_downgrade,9,5,0,😐
+2026-06-30,signature_electronique_bug,5,5,3,😐
+2026-06-30,bug_synchronisation_avance_immediate_client,5,5,1,😐
