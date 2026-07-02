@@ -45,3 +45,13 @@ date,sujet,n_conv,n_users,sentiment
 2026-06-30,bug_avancement_abonnement_downgrade,9,5,0,😐
 2026-06-30,signature_electronique_bug,5,5,3,😐
 2026-06-30,bug_synchronisation_avance_immediate_client,5,5,1,😐
+2026-07-01,facturation_electronique_inscription_blocage,35,18,5,😐
+2026-07-01,mandat_sepa_urssaf_connexion,26,21,9,😐
+2026-07-01,connexion_compte_client_bloquee,17,10,7,😐
+2026-07-01,declaration_urssaf_bug_erreur,16,15,8,😐
+2026-07-01,facturation_annulation_correction_incomprehension,31,30,2,😐
+2026-07-01,abonnement_churn_remboursement,16,13,0,😠
+2026-07-01,avance_immediate_blocage_activation,16,16,1,😐
+2026-07-01,synchronisation_compte_bancaire_bug,14,11,1,😐
+2026-07-01,livre_recettes_synchronisation_bug,13,12,4,😐
+2026-07-01,relances_automatiques_bug,6,6,2,😐
