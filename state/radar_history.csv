@@ -55,3 +55,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-01,synchronisation_compte_bancaire_bug,14,11,1,😐
 2026-07-01,livre_recettes_synchronisation_bug,13,12,4,😐
 2026-07-01,relances_automatiques_bug,6,6,2,😐
+2026-07-02,facturation_electronique_confusion_massive,96,49,6,😐
+2026-07-02,declaration_urssaf_bug_blocage,28,21,12,😐
+2026-07-02,tva_bug_confusion,15,11,5,😐
+2026-07-02,annulation_correction_facture_confusion,40,35,1,😐
+2026-07-02,avance_immediate_bug_blocage,28,25,2,😐
+2026-07-02,connexion_compte_blocage,14,8,2,😐
+2026-07-02,numerotation_factures_bug,8,7,1,😐
