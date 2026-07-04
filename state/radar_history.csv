@@ -62,3 +62,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-02,avance_immediate_bug_blocage,28,25,2,😐
 2026-07-02,connexion_compte_blocage,14,8,2,😐
 2026-07-02,numerotation_factures_bug,8,7,1,😐
+2026-07-03,declaration_urssaf_mandat_connexion_bug,15,13,5,😐
+2026-07-03,compte_client_informations_bug,13,8,6,😐
+2026-07-03,facturation_electronique_confusion_massive,72,38,3,😐
+2026-07-03,annulation_correction_factures_incomprehension,21,19,0,😐
+2026-07-03,avance_immediate_activation_creation_client,20,17,2,😐
+2026-07-03,abonnement_churn_resiliation_blocage,17,14,0,😐
+2026-07-03,creation_facture_acompte_incomprehension,10,10,1,😐
+2026-07-03,comptabilite_banque_synchronisation_bug,8,5,1,😐
