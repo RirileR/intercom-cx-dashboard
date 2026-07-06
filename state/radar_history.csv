@@ -70,3 +70,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-03,abonnement_churn_resiliation_blocage,17,14,0,😐
 2026-07-03,creation_facture_acompte_incomprehension,10,10,1,😐
 2026-07-03,comptabilite_banque_synchronisation_bug,8,5,1,😐
+2026-07-05,facturation_creation_correction_blocage,14,13,5,😐
+2026-07-05,facturation_electronique_confusion_massive,49,21,1,😐
+2026-07-05,avance_immediate_blocage_confusion,17,14,3,😐
+2026-07-05,abonnement_periode_essai_confusion,12,9,0,😐
+2026-07-05,abonnement_churn_resiliation_bugs,7,7,2,😠
