@@ -75,3 +75,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-05,avance_immediate_blocage_confusion,17,14,3,😐
 2026-07-05,abonnement_periode_essai_confusion,12,9,0,😐
 2026-07-05,abonnement_churn_resiliation_bugs,7,7,2,😠
+2026-07-06,pdf_generation_download_broken,199,161,173,😐
+2026-07-06,kyc_identity_verification_blocked,55,34,15,😐
+2026-07-06,email_send_invoice_quote_broken,35,32,29,😐
+2026-07-06,avance_immediate_client_creation_blocked,21,17,8,😐
+2026-07-06,urssaf_mandate_connection_bug,12,11,5,😐
