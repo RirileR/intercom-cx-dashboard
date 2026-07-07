@@ -41,7 +41,7 @@ ATTR_THEME = "Thème de la demande"
 ATTR_NATURE = "Typologie du contact"
 ATTR_SENTIMENT = "Sentiment"
 NON_QUAL = "(non qualifié)"
-TOP_THEMES = 8
+TOP_THEMES = 12
 JOURS = ["lun", "mar", "mer", "jeu", "ven", "sam", "dim"]
 MOIS = ["", "janv", "févr", "mars", "avr", "mai", "juin",
         "juil", "août", "sept", "oct", "nov", "déc"]
@@ -353,8 +353,9 @@ header h1{font-size:22px;font-weight:600}header .sub{font-size:13px;color:#7c6e8
 <script>
 const WEEKS=/*DATA*/;const META=/*META*/;
 const $=s=>document.querySelector(s);
-const both=WEEKS.filter(w=>w.type==='peak'||w.partial).slice(-2).map(w=>w.key);
-const KEYS_BOTH=both.length?both:WEEKS.slice(-2).map(w=>w.key);
+// Défaut = les 2 dernières semaines COMPLÈTES (on ignore la semaine en cours, souvent quasi vide)
+const complete=WEEKS.filter(w=>!w.partial);
+const KEYS_BOTH=(complete.length>=2?complete.slice(-2):WEEKS.slice(-2)).map(w=>w.key);
 let selected='both';
 function tab(n){$('#vue').classList.toggle('hide',n!=='vue');$('#cmp').classList.toggle('hide',n!=='cmp');
   $('#t-vue').classList.toggle('on',n==='vue');$('#t-cmp').classList.toggle('on',n==='cmp');}
@@ -365,7 +366,7 @@ function renderChart(){const mx=Math.max.apply(null,WEEKS.map(w=>w.total));
     return `<div class="${cls}" onclick="selectWeek('${w.key}')"><div class="v">${w.total.toLocaleString('fr-FR')}</div><div class="bar" style="height:${h}px"></div><div class="l">${w.label}</div></div>`;}).join('');}
 function selectWeek(k){selected=k;$('#weekSel').value=k;renderChart();renderDetail();}
 function onSel(){selected=$('#weekSel').value;renderChart();renderDetail();}
-function fillWeekSel(){let o=`<option value="both">⭐ Les 2 semaines marquantes</option>`;
+function fillWeekSel(){let o=`<option value="both">⭐ 2 dernières semaines complètes</option>`;
   o+=WEEKS.slice().reverse().map(w=>`<option value="${w.key}">Semaine du ${w.label}</option>`).join('');
   $('#weekSel').innerHTML=o;$('#weekSel').value=selected;}
 function bars(arr){const mx=Math.max.apply(null,arr.map(r=>r[1]))||1;

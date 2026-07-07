@@ -3,7 +3,7 @@ name: Rafraîchir le cockpit CX
 # Quand le robot tourne :
 on:
   schedule:
-    - cron: "0 6 * * 1"      # chaque lundi à 06:00 UTC (08:00 heure de Paris)
+    - cron: "0 6 * * *"      # tous les jours à 06:00 UTC (08:00 heure de Paris)
   workflow_dispatch: {}       # + un bouton « Run workflow » pour lancer à la main
   push:
     branches: [ main ]        # + à chaque mise à jour du code
