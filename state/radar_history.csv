@@ -80,3 +80,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-06,email_send_invoice_quote_broken,35,32,29,😐
 2026-07-06,avance_immediate_client_creation_blocked,21,17,8,😐
 2026-07-06,urssaf_mandate_connection_bug,12,11,5,😐
+2026-07-07,activation_facturation_electronique_bloquee,44,31,15,😐
+2026-07-07,connexion_urssaf_mandat_bug,20,18,12,😐
+2026-07-07,verification_identite_bloquee,19,12,8,😐
+2026-07-07,abonnement_downgrade_churn_action_bloquee,14,13,0,😠
+2026-07-07,code_postal_invalide_avance_immediate,8,6,3,😐
+2026-07-07,signature_electronique_bloquee,7,4,4,😐
