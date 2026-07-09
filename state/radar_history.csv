@@ -86,3 +86,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-07,abonnement_downgrade_churn_action_bloquee,14,13,0,😠
 2026-07-07,code_postal_invalide_avance_immediate,8,6,3,😐
 2026-07-07,signature_electronique_bloquee,7,4,4,😐
+2026-07-08,connexion_urssaf_mandat_bug,19,16,6,😐
+2026-07-08,facturation_electronique_inscription_suspendue_bloquee,19,17,8,😐
+2026-07-08,verification_identite_blocage,14,11,5,😐
+2026-07-08,resiliation_churn_abonnement_masse,19,14,0,😐
+2026-07-08,avoir_annulation_correction_facture_bug,15,15,2,😐
+2026-07-08,avance_immediate_creation_client_blocage,12,12,2,😐
+2026-07-08,declaration_urssaf_bug,10,10,3,😐
