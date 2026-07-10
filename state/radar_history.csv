@@ -93,3 +93,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-08,avoir_annulation_correction_facture_bug,15,15,2,😐
 2026-07-08,avance_immediate_creation_client_blocage,12,12,2,😐
 2026-07-08,declaration_urssaf_bug,10,10,3,😐
+2026-07-09,facturation_electronique_verification_identite_echec,7,5,5,😐
+2026-07-09,facturation_electronique_inscription_suspendue_bloquee,21,19,2,😐
+2026-07-09,avance_immediate_activation_bug,10,9,4,😐
+2026-07-09,declaration_urssaf_bug_erreur,7,6,4,😠
+2026-07-09,connexion_banque_impossible,7,6,1,😐
+2026-07-09,numerotation_factures_bug,6,5,2,😐
+2026-07-09,email_envoi_factures_bloque,5,5,2,😠
+2026-07-09,signature_electronique_bug,5,4,3,😠
