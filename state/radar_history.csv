@@ -101,3 +101,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-09,numerotation_factures_bug,6,5,2,😐
 2026-07-09,email_envoi_factures_bloque,5,5,2,😠
 2026-07-09,signature_electronique_bug,5,4,3,😠
+2026-07-10,facturation_electronique_inscription_suspension,38,33,6,😐
+2026-07-10,maintenance_impact_utilisateurs,27,26,1,😠
+2026-07-10,connexion_urssaf_mandat,23,19,7,😐
+2026-07-10,annulation_correction_facture_incomprehension,18,14,1,😐
+2026-07-10,avance_immediate_facturation_erreur,17,16,2,😐
+2026-07-10,abonnement_resiliation_churn,14,13,1,😐
+2026-07-10,connexion_bancaire_echec,12,8,1,😐
