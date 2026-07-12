@@ -108,3 +108,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-10,avance_immediate_facturation_erreur,17,16,2,😐
 2026-07-10,abonnement_resiliation_churn,14,13,1,😐
 2026-07-10,connexion_bancaire_echec,12,8,1,😐
+2026-07-11,bugs_divers_app,7,7,7,😐
+2026-07-11,facturation_electronique_incomprehension_activation,22,13,4,😐
+2026-07-11,facturation_electronique_suspension_annuaire,11,11,0,😐
+2026-07-11,avance_immediate_bugs_blocages,10,10,1,😐
+2026-07-11,abonnement_bugs_actions_bloquees,8,8,4,😠
