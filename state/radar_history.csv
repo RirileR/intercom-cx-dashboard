@@ -113,3 +113,5 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-11,facturation_electronique_suspension_annuaire,11,11,0,😐
 2026-07-11,avance_immediate_bugs_blocages,10,10,1,😐
 2026-07-11,abonnement_bugs_actions_bloquees,8,8,4,😠
+2026-07-12,facturation_electronique_inscription_blocage,35,29,9,😐
+2026-07-12,downgrade_abonnement_masse,32,31,0,😠
