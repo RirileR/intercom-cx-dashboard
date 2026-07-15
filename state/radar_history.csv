@@ -121,3 +121,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-13,facturation_annulation_correction_bug,9,8,1,😐
 2026-07-13,verification_identite_blocage,7,6,2,😐
 2026-07-13,declaration_urssaf_mandat_connexion_bug,6,6,1,😐
+2026-07-14,facturation_electronique_incomprehension_activation,21,16,3,😐
+2026-07-14,facturation_electronique_inscription_suspendue,15,14,0,😐
+2026-07-14,avance_immediate_creation_client_erreur_urssaf,10,10,3,😐
+2026-07-14,suppression_compte_client,9,8,0,😐
+2026-07-14,facturation_electronique_verification_identite_bloquee,8,8,4,😐
+2026-07-14,connexion_urssaf_mandat_tierce_declaration_bloquee,7,6,3,😐
