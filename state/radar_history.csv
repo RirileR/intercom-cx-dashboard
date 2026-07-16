@@ -127,3 +127,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-14,suppression_compte_client,9,8,0,😐
 2026-07-14,facturation_electronique_verification_identite_bloquee,8,8,4,😐
 2026-07-14,connexion_urssaf_mandat_tierce_declaration_bloquee,7,6,3,😐
+2026-07-15,facturation_electronique_inscription_bloquee,35,27,12,😐
+2026-07-15,verification_identite_echec,12,8,5,😐
+2026-07-15,connexion_urssaf_mandat_bloque,11,11,3,😐
+2026-07-15,facture_annuaire_dgfip_erreur,8,8,0,😐
+2026-07-15,abonnement_renouvellement_facturation_incorrecte,7,6,1,😠
