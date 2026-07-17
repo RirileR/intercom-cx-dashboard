@@ -132,3 +132,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-15,connexion_urssaf_mandat_bloque,11,11,3,😐
 2026-07-15,facture_annuaire_dgfip_erreur,8,8,0,😐
 2026-07-15,abonnement_renouvellement_facturation_incorrecte,7,6,1,😠
+2026-07-16,facturation_electronique_inscription_suspendue_blocage,22,16,7,😐
+2026-07-16,avance_immediate_creation_client_erreur,10,10,4,😐
+2026-07-16,urssaf_connexion_mandat_bug,6,4,1,😐
+2026-07-16,acompte_enregistrement_bug,6,5,1,😐
+2026-07-16,upload_justificatif_pdf_bug,5,5,4,😐
+2026-07-16,mode_test_desactivation_confusion,5,5,3,😐
