@@ -145,3 +145,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-17,declaration_urssaf_bug,11,9,3,😐
 2026-07-17,abonnement_prelevement_anomalie,10,6,1,😐
 2026-07-17,synchronisation_bancaire_bug,10,9,2,😐
+2026-07-18,facturation_electronique_activation_confusion,34,18,4,😐
+2026-07-18,annulation_resiliation_churn_remboursement,12,11,0,😐
+2026-07-18,annulation_correction_factures_incomprehension,11,10,0,😐
+2026-07-18,synchronisation_banque_bug,7,7,2,😐
+2026-07-18,connexion_urssaf_mandat_blocage,5,5,1,😐
