@@ -156,3 +156,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-19,avance_immediate_creation_client_bug,8,5,3,😐
 2026-07-19,annulation_correction_facture_incomprehension,8,5,1,😐
 2026-07-19,churn_remboursement_abonnement,8,8,0,😐
+2026-07-20,facturation_electronique_inscription_bloquee,76,54,11,😐
+2026-07-20,avance_immediate_creation_client_bloquee,16,14,5,😐
+2026-07-20,avance_immediate_facturation_bug,8,8,4,😐
+2026-07-20,verification_identite_echec_blocage,8,7,1,😐
+2026-07-20,connexion_banque_bug,8,8,1,😐
+2026-07-20,declaration_urssaf_bug_connexion_mandat,6,6,3,😐
+2026-07-20,abonnement_renouvellement_prelevement_echec,6,6,1,😠
+2026-07-20,facturation_numerotation_doublon,5,5,2,😐
