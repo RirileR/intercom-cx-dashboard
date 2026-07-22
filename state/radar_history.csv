@@ -164,3 +164,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-20,declaration_urssaf_bug_connexion_mandat,6,6,3,😐
 2026-07-20,abonnement_renouvellement_prelevement_echec,6,6,1,😠
 2026-07-20,facturation_numerotation_doublon,5,5,2,😐
+2026-07-21,facturation_electronique_inscription_bloquee,27,21,8,😐
+2026-07-21,avance_immediate_creation_client_bug,21,18,9,😐
+2026-07-21,facturation_electronique_campagne_confusion_massive,22,17,1,😐
+2026-07-21,annulation_correction_facture_confusion_massive,18,17,0,😐
+2026-07-21,declaration_urssaf_bug_erreur,10,9,3,😐
+2026-07-21,signature_electronique_bug,6,6,2,😐
+2026-07-21,connexion_bancaire_bug,5,5,3,😐
