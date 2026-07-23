@@ -171,3 +171,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-21,declaration_urssaf_bug_erreur,10,9,3,😐
 2026-07-21,signature_electronique_bug,6,6,2,😐
 2026-07-21,connexion_bancaire_bug,5,5,3,😐
+2026-07-22,facturation_electronique_inscription_suspendue_bloquee,37,34,0,😐
+2026-07-22,avance_immediate_creation_client_erreur,19,17,3,😐
+2026-07-22,facture_electronique_en_cours_bloquee,15,13,5,😐
+2026-07-22,verification_identite_echec_carte_rejetee,21,16,2,😐
+2026-07-22,abonnement_churn_negatif_tarif,16,15,1,😠
+2026-07-22,connexion_bancaire_bug,9,8,4,😐
+2026-07-22,declaration_urssaf_bug_impossible,7,7,4,😐
