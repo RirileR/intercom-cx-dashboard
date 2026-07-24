@@ -178,3 +178,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-22,abonnement_churn_negatif_tarif,16,15,1,😠
 2026-07-22,connexion_bancaire_bug,9,8,4,😐
 2026-07-22,declaration_urssaf_bug_impossible,7,7,4,😐
+2026-07-23,facturation_electronique_bug_activation,14,9,9,😠
+2026-07-23,inscription_annuaire_facturation_electronique_suspendue,20,18,1,😐
+2026-07-23,verification_identite_blocage,13,8,3,😐
+2026-07-23,churn_resiliation_desinscription,12,9,0,😐
+2026-07-23,connexion_bancaire_bug,7,6,3,😐
+2026-07-23,avance_immediate_bug_client,7,7,4,😐
