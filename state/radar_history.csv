@@ -184,3 +184,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-23,churn_resiliation_desinscription,12,9,0,😐
 2026-07-23,connexion_bancaire_bug,7,6,3,😐
 2026-07-23,avance_immediate_bug_client,7,7,4,😐
+2026-07-24,connexion_urssaf_mandat_bug,13,11,7,😐
+2026-07-24,facturation_electronique_inscription_blocage,45,29,4,😐
+2026-07-24,avance_immediate_creation_client_erreur,13,11,2,😐
+2026-07-24,synchronisation_bancaire_bug,11,9,1,😐
+2026-07-24,verification_identite_echec_blocage,6,5,1,😐
