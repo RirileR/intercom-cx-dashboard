@@ -189,3 +189,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-24,avance_immediate_creation_client_erreur,13,11,2,😐
 2026-07-24,synchronisation_bancaire_bug,11,9,1,😐
 2026-07-24,verification_identite_echec_blocage,6,5,1,😐
+2026-07-25,incomprehension_facturation_electronique_fonctionnement,47,29,1,😐
+2026-07-25,erreur_inscription_annuaire_facturation_electronique,45,41,2,😐
+2026-07-25,bug_creation_modification_facture,20,19,3,😐
+2026-07-25,bug_connexion_urssaf_declaration,8,7,3,😐
+2026-07-25,bug_avance_immediate,7,6,4,😐
