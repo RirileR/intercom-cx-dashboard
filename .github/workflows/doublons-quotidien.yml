@@ -1,0 +1,27 @@
+name: Doublons conversations (quotidien)
+
+on:
+  schedule:
+    # 8h Paris (CEST = UTC+2) chaque jour → 6h UTC
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: doublons-quotidien
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Détection des doublons + post Slack
+        env:
+          INTERCOM_TOKEN: ${{ secrets.INTERCOM_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python doublons_quotidien.py
