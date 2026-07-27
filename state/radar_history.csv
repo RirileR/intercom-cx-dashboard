@@ -194,3 +194,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-25,bug_creation_modification_facture,20,19,3,😐
 2026-07-25,bug_connexion_urssaf_declaration,8,7,3,😐
 2026-07-25,bug_avance_immediate,7,6,4,😐
+2026-07-26,facturation_electronique_incomprehension_activation_blocage,30,25,3,😐
+2026-07-26,inscription_annuaire_facturation_electronique_erreur,26,24,3,😐
+2026-07-26,abonnement_surfacturation_remboursement_churn,8,7,0,😠
+2026-07-26,erreur_inscription_compte,6,6,2,😐
+2026-07-26,bug_connexion_urssaf_mandat,5,5,2,😐
