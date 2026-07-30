@@ -210,3 +210,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-28,erreur_facturation_electronique_rejet_chorus,8,6,1,😐
 2026-07-28,plateforme_non_fonctionnelle_bug_general,6,6,2,😠
 2026-07-28,divergence_declaration_urssaf_bug,6,6,2,😐
+2026-07-29,confusion_massive_facturation_electronique_obligatoire,88,49,5,😐
+2026-07-29,erreur_inscription_annuaire_facturation_electronique,59,48,13,😐
+2026-07-29,bug_abonnement_facturation_bloquee,14,14,9,😠
+2026-07-29,bug_inscription_compte_creation,12,8,6,😐
+2026-07-29,bug_avance_immediate_facturation,25,23,2,😐
+2026-07-29,bug_verification_identite,15,11,4,😐
+2026-07-29,bug_connexion_urssaf_mandat,8,6,0,😐
