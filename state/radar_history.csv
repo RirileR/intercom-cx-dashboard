@@ -217,3 +217,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-29,bug_avance_immediate_facturation,25,23,2,😐
 2026-07-29,bug_verification_identite,15,11,4,😐
 2026-07-29,bug_connexion_urssaf_mandat,8,6,0,😐
+2026-07-30,facturation_electronique_verification_identite_echec,15,8,6,😐
+2026-07-30,connexion_compte_blocage_bug,13,10,5,😐
+2026-07-30,annulation_correction_facture_incomprehension_blocage,31,27,3,😐
+2026-07-30,facturation_electronique_inscription_suspendue_bloquee,30,30,0,😐
+2026-07-30,abonnement_periode_essai_passage_gratuit_bloquage,22,15,0,😐
+2026-07-30,avance_immediate_activation_blocage,16,14,2,😐
+2026-07-30,facturation_electronique_erreur_prenom_nom,7,6,3,😐
