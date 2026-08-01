@@ -224,3 +224,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-30,abonnement_periode_essai_passage_gratuit_bloquage,22,15,0,😐
 2026-07-30,avance_immediate_activation_blocage,16,14,2,😐
 2026-07-30,facturation_electronique_erreur_prenom_nom,7,6,3,😐
+2026-07-31,urssaf_declaration_blocage,63,55,10,😐
+2026-07-31,facturation_electronique_inscription_suspendue,30,24,9,😐
+2026-07-31,avance_immediate_creation_client_bug,14,13,5,😐
+2026-07-31,facturation_electronique_confusion_plateforme,88,41,1,😐
+2026-07-31,annulation_correction_factures_incomprehension,38,31,1,😐
+2026-07-31,abonnement_churn_resiliation_blocage,17,14,0,😠
+2026-07-31,urssaf_mandat_connexion_bug,12,12,4,😐
