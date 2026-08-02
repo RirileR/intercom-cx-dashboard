@@ -231,3 +231,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-07-31,annulation_correction_factures_incomprehension,38,31,1,😐
 2026-07-31,abonnement_churn_resiliation_blocage,17,14,0,😠
 2026-07-31,urssaf_mandat_connexion_bug,12,12,4,😐
+2026-08-01,facturation_electronique_suspension_blocage,40,32,8,😐
+2026-08-01,urssaf_declaration_bug_blocage,18,16,10,😐
+2026-08-01,annulation_correction_facture_incomprehension,19,17,1,😐
+2026-08-01,connexion_compte_creation_blocage,11,7,0,😐
+2026-08-01,avance_immediate_bug_creation_client,9,8,3,😐
+2026-08-01,facturation_electronique_verification_identite_echec,7,6,4,😐
+2026-08-01,abonnement_churn_resiliation_bug,6,5,0,😠
