@@ -238,3 +238,7 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-01,avance_immediate_bug_creation_client,9,8,3,😐
 2026-08-01,facturation_electronique_verification_identite_echec,7,6,4,😐
 2026-08-01,abonnement_churn_resiliation_bug,6,5,0,😠
+2026-08-02,facturation_electronique_inscription_blocage,27,19,5,😐
+2026-08-02,annulation_correction_facture_confusion,10,9,1,😐
+2026-08-02,comptabilite_banque_sync_erreur,10,9,3,😐
+2026-08-02,declaration_urssaf_blocage_erreur,9,9,2,😐
