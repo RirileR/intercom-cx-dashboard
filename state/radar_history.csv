@@ -242,3 +242,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-02,annulation_correction_facture_confusion,10,9,1,😐
 2026-08-02,comptabilite_banque_sync_erreur,10,9,3,😐
 2026-08-02,declaration_urssaf_blocage_erreur,9,9,2,😐
+2026-08-03,verification_identite_facturation_electronique,39,21,17,😐
+2026-08-03,activation_facturation_electronique_bloquee,37,32,11,😐
+2026-08-03,avance_immediate_creation_client_bug,14,12,5,😐
+2026-08-03,annulation_correction_facture_incomprehension_blocage,22,22,1,😐
+2026-08-03,connexion_compte_bloquee,18,4,1,😠
+2026-08-03,connexion_urssaf_mandat_bug,13,11,2,😐
+2026-08-03,signature_electronique_bug,7,6,3,😐
