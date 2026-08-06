@@ -249,3 +249,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-03,connexion_compte_bloquee,18,4,1,😠
 2026-08-03,connexion_urssaf_mandat_bug,13,11,2,😐
 2026-08-03,signature_electronique_bug,7,6,3,😐
+2026-08-05,verification_identite_facturation_electronique,32,21,12,😐
+2026-08-05,activation_facturation_electronique_bloquee,21,15,10,😐
+2026-08-05,erreur_signature_mandat_electronique,11,7,6,😐
+2026-08-05,annulation_correction_facture_incomprehension,27,25,2,😐
+2026-08-05,connexion_compte_impossible,15,10,2,😐
+2026-08-05,avance_immediate_creation_client_bloquee,15,14,2,😐
+2026-08-05,connexion_urssaf_mandat_tierce,9,8,2,😐
+2026-08-05,envoi_facture_email_bug,5,5,2,😐
