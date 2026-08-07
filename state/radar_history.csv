@@ -257,3 +257,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-05,avance_immediate_creation_client_bloquee,15,14,2,😐
 2026-08-05,connexion_urssaf_mandat_tierce,9,8,2,😐
 2026-08-05,envoi_facture_email_bug,5,5,2,😐
+2026-08-06,verification_identite_facturation_electronique,29,22,5,😐
+2026-08-06,bug_affichage_creation_factures,10,10,8,😐
+2026-08-06,activation_mandat_facturation_electronique,29,22,2,😐
+2026-08-06,connexion_urssaf_mandat,16,14,2,😐
+2026-08-06,retractation_remboursement_abonnement,10,6,0,😠
