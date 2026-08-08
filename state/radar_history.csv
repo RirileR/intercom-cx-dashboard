@@ -262,3 +262,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-06,activation_mandat_facturation_electronique,29,22,2,😐
 2026-08-06,connexion_urssaf_mandat,16,14,2,😐
 2026-08-06,retractation_remboursement_abonnement,10,6,0,😠
+2026-08-07,verification_identite_facturation_electronique,22,17,9,😐
+2026-08-07,activation_blocage_facturation_electronique,21,17,2,😐
+2026-08-07,connexion_urssaf_echec,12,12,1,😐
+2026-08-07,suppression_annulation_factures_bloquee,11,10,2,😐
+2026-08-07,churn_resiliation_abonnement_negatif,10,7,0,😠
