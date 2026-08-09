@@ -267,3 +267,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-07,connexion_urssaf_echec,12,12,1,😐
 2026-08-07,suppression_annulation_factures_bloquee,11,10,2,😐
 2026-08-07,churn_resiliation_abonnement_negatif,10,7,0,😠
+2026-08-08,verification_identite_facturation_electronique,18,13,10,😐
+2026-08-08,activation_mandat_facturation_electronique,15,9,0,😐
+2026-08-08,synchronisation_banque,7,5,1,😐
+2026-08-08,abonnement_offre_promo_non_appliquee,5,4,0,😐
+2026-08-08,bug_pieces_jointes_envoi_factures,5,3,1,😐
