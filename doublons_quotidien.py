@@ -223,12 +223,17 @@ else:
     else:
         cid, err = resolve_channel_id(CHANNEL_NAME)
         if not cid:
+            print(f"[UPLOAD] ECHEC resolution canal '{CHANNEL_NAME}' : {err}")
             poster(f"⚠️ Fichier de suivi non joint (canal `{CHANNEL_NAME}` introuvable : {err}). "
                    f"Vérifie que le bot est bien dans le canal.")
         else:
+            print(f"[UPLOAD] canal '{CHANNEL_NAME}' resolu (id={cid}), envoi du fichier…")
             ok, err = slack_upload(cid, csv_path, f"doublons_suivi_{datestr}.csv",
                                    f"📎 Suivi des doublons du {today} — {nb_clients} clients, ~{nb_en_trop} conv à fusionner.")
-            if not ok:
+            if ok:
+                print("[UPLOAD] fichier de suivi joint dans #cx-incidents ✅")
+            else:
+                print(f"[UPLOAD] ECHEC : {err}")
                 poster(f"⚠️ Fichier de suivi non joint ({err}). Le message ci-dessus reste valable.")
 
 print(f"[{'DRY-RUN' if DRY else 'OK'}] {nb_clients} clients / {nb_conv} conv en doublon "
