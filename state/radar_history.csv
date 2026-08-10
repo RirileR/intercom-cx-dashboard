@@ -272,3 +272,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-08,synchronisation_banque,7,5,1,😐
 2026-08-08,abonnement_offre_promo_non_appliquee,5,4,0,😐
 2026-08-08,bug_pieces_jointes_envoi_factures,5,3,1,😐
+2026-08-09,verification_identite_facturation_electronique,14,12,6,😐
+2026-08-09,bugs_creation_finalisation_factures,8,8,6,😐
+2026-08-09,activation_mandat_facturation_electronique,22,15,1,😐
+2026-08-09,declaration_urssaf_bug_blocage,6,5,1,😐
+2026-08-09,abonnement_essai_gratuit_bug_facturation,5,5,1,😠
