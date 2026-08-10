@@ -7,7 +7,7 @@ et poste un résumé actionnable dans Slack #cx-incidents.
 Lancé par GitHub Actions (cron). Secrets : INTERCOM_TOKEN, SLACK_WEBHOOK_URL.
 Test local sans rien poster :  python3 doublons_quotidien.py --dry-run
 """
-import os, sys, time, json, urllib.request, urllib.error, collections
+import os, sys, time, json, csv, urllib.request, urllib.error, urllib.parse, collections
 from datetime import datetime, timezone, timedelta
 
 DRY = "--dry-run" in sys.argv
@@ -117,39 +117,119 @@ nb_conv = sum(len(cs) for _, cs in groupes)
 nb_en_trop = nb_conv - nb_clients
 today = (datetime.now(timezone.utc) + timedelta(hours=2)).strftime("%d/%m/%Y")
 
-# --- 3. construire le message Slack ---
-entete = (
-    f"🔁 *DOUBLONS DE CONVERSATIONS — {today}*\n"
-    f"*{nb_clients} clients* ont plusieurs conversations ouvertes (escaladées à un humain) "
-    f"= *~{nb_en_trop} conversations à fusionner*.\n"
-    f"_Process : garder la 🟢 (la plus récente), y répondre ; lier les autres + macro « doublons » puis fermer._\n"
-    f"_Priorité aux clients avec 3 conversations ou plus._"
-)
-lignes = []
-for ident, cs in groupes:
-    liens = " ".join(f"<{lien(c['id'])}|{'🟢' if c is cs[-1] else '🔗'}>" for c in cs)
-    lignes.append(f"• *{ident}* ({len(cs)}) : {liens}")
+# --- 3. générer le FICHIER de suivi (CSV) ---
+datestr = today.replace("/", "-")
+csv_path = os.path.join("/tmp", f"doublons_suivi_{datestr}.csv")
+with open(csv_path, "w", newline="", encoding="utf-8-sig") as f:  # utf-8-sig = accents OK dans Excel
+    w = csv.writer(f)
+    w.writerow(["email_client", "nb_conv_ouvertes", "date_1ere_conv", "date_derniere_conv",
+                "lien_a_garder", "liens_a_fermer", "traite (o/n)"])
+    for ident, cs in groupes:
+        d1 = datetime.fromtimestamp(cs[0]["created_at"]).strftime("%Y-%m-%d %H:%M")
+        d2 = datetime.fromtimestamp(cs[-1]["created_at"]).strftime("%Y-%m-%d %H:%M")
+        a_garder = lien(cs[-1]["id"])
+        a_fermer = " ".join(lien(c["id"]) for c in cs[:-1])
+        w.writerow([ident, len(cs), d1, d2, a_garder, a_fermer, ""])
 
-# --- 4. poster (ou afficher en dry-run), en découpant si trop long ---
+# --- 4. helpers Slack (message via webhook ; fichier via bot token) ---
+SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN", "")
+CHANNEL_NAME = "cx-incidents"
+
 def poster(txt):
     if DRY or not SLACK_URL:
-        print("----- MESSAGE SLACK -----")
-        print(txt)
-        return
+        print("----- MESSAGE SLACK -----"); print(txt); return
     body = json.dumps({"text": txt}).encode()
     req = urllib.request.Request(SLACK_URL, data=body,
                                  headers={"Content-Type": "application/json"}, method="POST")
     with urllib.request.urlopen(req, timeout=30) as r:
         r.read()
 
+def slack_api_form(method, params):
+    data = urllib.parse.urlencode(params).encode()
+    req = urllib.request.Request(f"https://slack.com/api/{method}", data=data,
+        headers={"Authorization": f"Bearer {SLACK_BOT_TOKEN}",
+                 "Content-Type": "application/x-www-form-urlencoded"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.loads(r.read())
+
+def slack_api_json(method, payload):
+    data = json.dumps(payload).encode()
+    req = urllib.request.Request(f"https://slack.com/api/{method}", data=data,
+        headers={"Authorization": f"Bearer {SLACK_BOT_TOKEN}",
+                 "Content-Type": "application/json; charset=utf-8"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.loads(r.read())
+
+def resolve_channel_id(name):
+    cursor = ""
+    for _ in range(12):
+        r = slack_api_form("conversations.list",
+                           {"types": "public_channel,private_channel", "limit": "1000", "cursor": cursor})
+        if not r.get("ok"):
+            return None, r.get("error")
+        for ch in r.get("channels", []):
+            if ch.get("name") == name:
+                return ch["id"], None
+        cursor = (r.get("response_metadata") or {}).get("next_cursor", "")
+        if not cursor:
+            break
+    return None, "channel_not_found"
+
+def slack_upload(channel_id, path, filename, comment):
+    size = os.path.getsize(path)
+    r1 = slack_api_form("files.getUploadURLExternal", {"filename": filename, "length": str(size)})
+    if not r1.get("ok"):
+        return False, "getUploadURL:" + str(r1.get("error"))
+    upload_url = r1["upload_url"]; file_id = r1["file_id"]
+    with open(path, "rb") as fh:
+        content = fh.read()
+    boundary = "----doublonsboundary1234"
+    body = (f"--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="file"; filename="{filename}"\r\n'
+            f"Content-Type: text/csv\r\n\r\n").encode() + content + f"\r\n--{boundary}--\r\n".encode()
+    req = urllib.request.Request(upload_url, data=body,
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        r.read()
+    r2 = slack_api_json("files.completeUploadExternal",
+                        {"files": [{"id": file_id, "title": filename}],
+                         "channel_id": channel_id, "initial_comment": comment})
+    if not r2.get("ok"):
+        return False, "complete:" + str(r2.get("error"))
+    return True, None
+
+# --- 5. poster : message résumé + priorités, puis joindre le fichier de suivi ---
+entete = (
+    f"🔁 *DOUBLONS DE CONVERSATIONS — {today}*\n"
+    f"*{nb_clients} clients* ont plusieurs conversations ouvertes (escaladées à un humain) "
+    f"= *~{nb_en_trop} conversations à fusionner*.\n"
+    f"_Process : garder la 🟢 (la plus récente), y répondre ; lier les autres + macro « doublons » puis fermer._\n"
+    f"📎 *Liste complète + suivi dans le fichier joint ci-dessous.*"
+)
+prioritaires = [(ident, cs) for ident, cs in groupes if len(cs) >= 3]
+
 if nb_clients == 0:
     poster(f"🔁 *DOUBLONS — {today}* : aucun doublon ouvert détecté aujourd'hui. 🎉")
 else:
     poster(entete)
-    # chunks de ~25 clients pour rester lisible
-    for i in range(0, len(lignes), 25):
-        poster("\n".join(lignes[i:i+25]))
-        time.sleep(1)
+    if prioritaires:
+        lignes = [f"• *{ident}* ({len(cs)}) : "
+                  + " ".join(f"<{lien(c['id'])}|{'🟢' if c is cs[-1] else '🔗'}>" for c in cs)
+                  for ident, cs in prioritaires]
+        poster("*⭐ Priorité — clients à 3 conversations ou plus :*\n" + "\n".join(lignes))
+    # joindre le fichier de suivi
+    if DRY or not SLACK_BOT_TOKEN:
+        print("CSV de suivi généré :", csv_path)
+    else:
+        cid, err = resolve_channel_id(CHANNEL_NAME)
+        if not cid:
+            poster(f"⚠️ Fichier de suivi non joint (canal `{CHANNEL_NAME}` introuvable : {err}). "
+                   f"Vérifie que le bot est bien dans le canal.")
+        else:
+            ok, err = slack_upload(cid, csv_path, f"doublons_suivi_{datestr}.csv",
+                                   f"📎 Suivi des doublons du {today} — {nb_clients} clients, ~{nb_en_trop} conv à fusionner.")
+            if not ok:
+                poster(f"⚠️ Fichier de suivi non joint ({err}). Le message ci-dessus reste valable.")
 
-print(f"[{'DRY-RUN' if DRY else 'OK'}] {nb_clients} clients / {nb_conv} conv ouvertes escaladées en doublon "
-      f"(sur {total_ouvertes} conv ouvertes escaladées).")
+print(f"[{'DRY-RUN' if DRY else 'OK'}] {nb_clients} clients / {nb_conv} conv en doublon "
+      f"(sur {total_ouvertes} conv ouvertes escaladées). CSV: {csv_path}")
