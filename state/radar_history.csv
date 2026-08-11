@@ -277,3 +277,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-09,activation_mandat_facturation_electronique,22,15,1,😐
 2026-08-09,declaration_urssaf_bug_blocage,6,5,1,😐
 2026-08-09,abonnement_essai_gratuit_bug_facturation,5,5,1,😠
+2026-08-10,verification_identite_facturation_electronique,35,25,25,😐
+2026-08-10,activation_mandat_facturation_electronique_bloque,19,18,5,😐
+2026-08-10,bug_modification_annulation_facture,12,12,6,😐
+2026-08-10,inscription_annuaire_facturation_electronique_delai,8,8,0,😐
+2026-08-10,bug_creation_facture_enregistrement,8,8,3,😐
+2026-08-10,mandat_facturation_electronique_suspendu,7,6,1,😐
+2026-08-10,bug_connexion_urssaf_mandat,7,7,3,😐
