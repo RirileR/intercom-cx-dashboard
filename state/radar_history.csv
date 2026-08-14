@@ -297,3 +297,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-12,connexion_urssaf_mandat,11,8,0,😐
 2026-08-12,connexion_bancaire_blocage,7,7,1,😐
 2026-08-12,numérotation_factures_devis_bug,5,4,1,😐
+2026-08-13,verification_identite_bug,48,35,24,😐
+2026-08-13,activation_facturation_electronique_blocage,30,25,4,😐
+2026-08-13,connexion_compte_bug,15,8,3,😐
+2026-08-13,declaration_urssaf_blocage,10,10,1,😐
+2026-08-13,avance_immediate_bug,7,7,4,😐
+2026-08-13,envoi_email_factures_bug,7,6,1,😐
+2026-08-13,import_factures_numerotation_bug,5,5,2,😠
