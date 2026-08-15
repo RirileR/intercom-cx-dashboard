@@ -304,3 +304,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-13,avance_immediate_bug,7,7,4,😐
 2026-08-13,envoi_email_factures_bug,7,6,1,😐
 2026-08-13,import_factures_numerotation_bug,5,5,2,😠
+2026-08-14,verification_identite_facturation_electronique,27,18,9,😐
+2026-08-14,activation_mandat_facturation_electronique_bloquee,39,34,2,😐
+2026-08-14,annulation_correction_factures_incomprehension,15,14,2,😐
+2026-08-14,churn_resiliation_suppression_compte,13,8,0,😐
+2026-08-14,avance_immediate_creation_client_blocage,7,6,4,😐
+2026-08-14,connexion_urssaf_mandat_blocage,7,7,0,😐
+2026-08-14,siret_siren_absent_factures,6,2,2,😐
