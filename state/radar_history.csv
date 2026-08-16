@@ -311,3 +311,7 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-14,avance_immediate_creation_client_blocage,7,6,4,😐
 2026-08-14,connexion_urssaf_mandat_blocage,7,7,0,😐
 2026-08-14,siret_siren_absent_factures,6,2,2,😐
+2026-08-15,verification_identite_facturation_electronique,15,13,10,😐
+2026-08-15,activation_mandat_facturation_electronique,19,14,2,😐
+2026-08-15,suppression_annulation_factures_bloquee,11,10,0,😐
+2026-08-15,connexion_compte_blocage,8,6,2,😠
