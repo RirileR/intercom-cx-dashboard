@@ -319,3 +319,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-16,activation_facturation_electronique_blocage,15,12,5,😐
 2026-08-16,facturation_electronique_confusion_activation_mandat,20,11,2,😐
 2026-08-16,abonnement_retractation_remboursement,10,9,0,😐
+2026-08-17,verification_identite_facturation_electronique,49,37,22,😐
+2026-08-17,activation_mandat_facturation_electronique_bloque,46,27,2,😐
+2026-08-17,avance_immediate_bug_creation_client_facturation,20,14,9,😐
+2026-08-17,reconnaissance_piece_identite_bug,18,17,17,😐
+2026-08-17,facturation_electronique_suspendue_bloquee_technique,11,9,2,😐
+2026-08-17,connexion_compte_email_modification_bug,15,11,1,😐
+2026-08-17,envoi_factures_email_bug,7,6,2,😐
+2026-08-17,importation_contacts_clients_bug,7,7,2,😐
