@@ -327,3 +327,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-17,connexion_compte_email_modification_bug,15,11,1,😐
 2026-08-17,envoi_factures_email_bug,7,6,2,😐
 2026-08-17,importation_contacts_clients_bug,7,7,2,😐
+2026-08-18,facturation_electronique_activation_mandat_blocage,62,33,6,😐
+2026-08-18,verification_identite_blocage,51,36,17,😐
+2026-08-18,facturation_electronique_problemes_techniques,9,8,6,😐
+2026-08-18,bug_creation_facture_devis,9,9,9,😐
+2026-08-18,connexion_compte_blocage,17,9,2,😠
+2026-08-18,urssaf_declaration_connexion_blocage,12,11,1,😐
