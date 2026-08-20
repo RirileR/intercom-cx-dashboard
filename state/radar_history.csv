@@ -333,3 +333,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-18,bug_creation_facture_devis,9,9,9,😐
 2026-08-18,connexion_compte_blocage,17,9,2,😠
 2026-08-18,urssaf_declaration_connexion_blocage,12,11,1,😐
+2026-08-19,verification_identite_echec,64,36,27,😐
+2026-08-19,activation_mandat_facturation_electronique_bloquee,32,16,4,😐
+2026-08-19,bug_annulation_correction_facture,27,21,0,😐
+2026-08-19,creation_client_avance_immediate_echec,15,14,2,😐
+2026-08-19,connexion_urssaf_mandat_echec,9,8,1,😐
+2026-08-19,bug_verification_identite_prenom_erreur,6,4,2,😐
