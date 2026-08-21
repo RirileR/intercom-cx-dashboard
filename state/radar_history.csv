@@ -339,3 +339,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-19,creation_client_avance_immediate_echec,15,14,2,😐
 2026-08-19,connexion_urssaf_mandat_echec,9,8,1,😐
 2026-08-19,bug_verification_identite_prenom_erreur,6,4,2,😐
+2026-08-20,verification_identite_bug,39,24,20,😐
+2026-08-20,activation_mandat_facturation_electronique_blocage,50,23,1,😐
+2026-08-20,suppression_compte_churn_massif,23,18,0,😐
+2026-08-20,bug_banque_synchronisation,7,7,2,😐
+2026-08-20,bug_avance_immediate_validation_facture,6,6,2,😐
