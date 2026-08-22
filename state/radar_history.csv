@@ -344,3 +344,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-20,suppression_compte_churn_massif,23,18,0,😐
 2026-08-20,bug_banque_synchronisation,7,7,2,😐
 2026-08-20,bug_avance_immediate_validation_facture,6,6,2,😐
+2026-08-21,activation_mandat_facturation_electronique_blocage,69,22,4,😐
+2026-08-21,verification_identite_blocage,48,31,17,😐
+2026-08-21,abonnement_passage_gratuit_blocage,24,16,0,🙂
+2026-08-21,connexion_urssaf_mandat_blocage,17,14,1,😐
+2026-08-21,suppression_annulation_facture_incomprehension,13,12,1,😐
+2026-08-21,probleme_signature_electronique,8,5,1,😐
