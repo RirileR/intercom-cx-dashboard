@@ -350,3 +350,7 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-21,connexion_urssaf_mandat_blocage,17,14,1,😐
 2026-08-21,suppression_annulation_facture_incomprehension,13,12,1,😐
 2026-08-21,probleme_signature_electronique,8,5,1,😐
+2026-08-22,verification_identite_blocage,32,25,13,😐
+2026-08-22,probleme_telechargement_bug_facturation,7,7,6,😐
+2026-08-22,activation_facturation_electronique_bloquee,31,11,1,😐
+2026-08-22,abonnement_churn_downgrade_confusion,11,11,0,😐
