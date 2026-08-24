@@ -354,3 +354,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-22,probleme_telechargement_bug_facturation,7,7,6,😐
 2026-08-22,activation_facturation_electronique_bloquee,31,11,1,😐
 2026-08-22,abonnement_churn_downgrade_confusion,11,11,0,😐
+2026-08-23,verification_identite_facturation_electronique,23,15,9,😐
+2026-08-23,activation_mandat_facturation_electronique_bloquee,34,15,1,😐
+2026-08-23,churn_resiliation_abonnement,20,12,0,😐
+2026-08-23,annulation_correction_factures_incomprise,14,13,1,😐
+2026-08-23,changement_adresse_email_compte,6,4,0,😐
