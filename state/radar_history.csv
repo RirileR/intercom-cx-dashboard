@@ -359,3 +359,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-23,churn_resiliation_abonnement,20,12,0,😐
 2026-08-23,annulation_correction_factures_incomprise,14,13,1,😐
 2026-08-23,changement_adresse_email_compte,6,4,0,😐
+2026-08-25,activation_mandat_facturation_electronique_blocage,93,37,5,😐
+2026-08-25,verification_identite_blocage,83,48,18,😐
+2026-08-25,connexion_compte_blocage,15,9,1,😐
+2026-08-25,enregistrement_client_avance_immediate_bloque,12,11,4,😐
+2026-08-25,facturation_electronique_probleme_technique_blocage,10,8,4,😐
+2026-08-25,logo_style_facture_bug,7,5,3,😐
+2026-08-25,facture_non_affichee_ou_manquante_bug,7,5,4,😐
+2026-08-25,synchronisation_banque_bug,5,5,1,😐
