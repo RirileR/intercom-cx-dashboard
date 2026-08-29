@@ -367,3 +367,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-25,logo_style_facture_bug,7,5,3,😐
 2026-08-25,facture_non_affichee_ou_manquante_bug,7,5,4,😐
 2026-08-25,synchronisation_banque_bug,5,5,1,😐
+2026-08-28,verification_identite_bug,50,28,25,😐
+2026-08-28,signature_mandat_facturation_electronique_bug,50,27,6,😐
+2026-08-28,avance_immediate_creation_client_bug,24,23,9,😐
+2026-08-28,inscription_compte_bloquee_bug,20,9,9,😐
+2026-08-28,annulation_correction_facture_incomprehension,29,21,1,😐
+2026-08-28,portabilite_plateforme_agreee_bug,25,7,1,😐
+2026-08-28,connexion_urssaf_mandat_bug,20,14,0,😐
+2026-08-28,connexion_compte_mot_de_passe_bug,18,13,0,😐
