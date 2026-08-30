@@ -375,3 +375,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-08-28,portabilite_plateforme_agreee_bug,25,7,1,😐
 2026-08-28,connexion_urssaf_mandat_bug,20,14,0,😐
 2026-08-28,connexion_compte_mot_de_passe_bug,18,13,0,😐
+2026-08-29,verification_identite_blocage,41,28,12,😐
+2026-08-29,activation_mandat_facturation_electronique,37,26,3,😐
+2026-08-29,abonnement_churn_resiliation_negative,14,13,0,😠
+2026-08-29,portabilite_pfae_blocage_technique,12,5,3,😐
+2026-08-29,connexion_compte_impossible,12,7,2,😐
+2026-08-29,avance_immediate_creation_client_echec,11,10,0,😐
