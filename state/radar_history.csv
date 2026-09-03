@@ -392,3 +392,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-01,connexion_compte_impossible,25,13,3,😐
 2026-09-01,suppression_compte_demandes_massives,21,15,1,😠
 2026-09-01,suppression_facture_brouillon_impossible,21,20,2,😐
+2026-09-02,signature_mandat_facturation_electronique,40,31,9,😐
+2026-09-02,verification_identite_facturation_electronique,36,29,21,😐
+2026-09-02,bug_pdf_telechargement_factures,7,7,5,😐
+2026-09-02,bug_application_crash_onglets,5,4,5,😠
+2026-09-02,portabilite_plateforme_agreee_bloquee,19,8,0,😐
+2026-09-02,bug_declaration_urssaf,15,13,4,😐
+2026-09-02,bug_avance_immediate_creation_client,14,12,3,😐
+2026-09-02,bug_abonnement_upgrade_brouillon,11,11,0,😐
