@@ -400,3 +400,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-02,bug_declaration_urssaf,15,13,4,😐
 2026-09-02,bug_avance_immediate_creation_client,14,12,3,😐
 2026-09-02,bug_abonnement_upgrade_brouillon,11,11,0,😐
+2026-09-03,verification_identite_bloquee,31,21,11,😐
+2026-09-03,suppression_compte_connexion_bug,8,5,5,😐
+2026-09-03,connexion_bancaire_bug,7,7,6,😐
+2026-09-03,inscription_facturation_electronique_bloquee_en_attente,41,30,2,😐
+2026-09-03,connexion_compte_urssaf_mandat,10,10,0,😐
+2026-09-03,facture_electronique_rejetee_ou_non_recue,10,9,1,😐
+2026-09-03,signature_mandat_facturation_electronique_bug,9,6,2,😐
+2026-09-03,erreur_api_urssaf_declaration,8,8,3,😐
