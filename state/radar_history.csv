@@ -408,3 +408,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-03,facture_electronique_rejetee_ou_non_recue,10,9,1,😐
 2026-09-03,signature_mandat_facturation_electronique_bug,9,6,2,😐
 2026-09-03,erreur_api_urssaf_declaration,8,8,3,😐
+2026-09-04,verification_identite_blocage,24,15,11,😐
+2026-09-04,avance_immediate_creation_client_bug,15,14,5,😐
+2026-09-04,declaration_urssaf_bug_blocage,10,8,5,😐
+2026-09-04,facturation_electronique_activation_bloquee,56,43,4,😐
+2026-09-04,modification_facture_finalisee_impossible,22,20,4,😐
+2026-09-04,portabilite_facturation_electronique_blocage,19,3,0,😐
+2026-09-04,abonnement_churn_remboursement_negatif,18,15,0,😠
+2026-09-04,synchronisation_bancaire_bug,10,7,3,😐
