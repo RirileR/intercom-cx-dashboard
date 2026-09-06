@@ -416,3 +416,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-04,portabilite_facturation_electronique_blocage,19,3,0,😐
 2026-09-04,abonnement_churn_remboursement_negatif,18,15,0,😠
 2026-09-04,synchronisation_bancaire_bug,10,7,3,😐
+2026-09-05,facturation_electronique_activation_blocage,31,21,0,😐
+2026-09-05,portabilite_plateforme_agreee_doublons,29,1,0,😐
+2026-09-05,avance_immediate_creation_client_erreur,9,9,2,😐
+2026-09-05,envoi_email_factures_blocage,8,8,2,😐
+2026-09-05,verification_identite_echec_blocage,6,5,3,😐
+2026-09-05,annulation_inscription_facturation_electronique,6,3,0,😐
+2026-09-05,numerotation_factures_bug,5,4,2,😐
