@@ -423,3 +423,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-05,verification_identite_echec_blocage,6,5,3,😐
 2026-09-05,annulation_inscription_facturation_electronique,6,3,0,😐
 2026-09-05,numerotation_factures_bug,5,4,2,😐
+2026-09-06,facturation_electronique_fonctionnement_manquant_bloquant,16,13,1,😐
+2026-09-06,facturation_electronique_activation_mandat_confusion,15,11,1,😐
+2026-09-06,avance_immediate_creation_client_blocage,12,9,2,😐
+2026-09-06,verification_identite_blocage_inscription,5,5,1,😐
+2026-09-06,signature_electronique_impossible_grisee,5,4,2,😐
+2026-09-06,abonnement_downgrade_churn_negatif,5,5,0,😠
