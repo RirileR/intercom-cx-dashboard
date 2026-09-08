@@ -429,3 +429,13 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-06,verification_identite_blocage_inscription,5,5,1,😐
 2026-09-06,signature_electronique_impossible_grisee,5,4,2,😐
 2026-09-06,abonnement_downgrade_churn_negatif,5,5,0,😠
+2026-09-07,avance_immediate_creation_client_bloquee,23,21,8,😐
+2026-09-07,facture_impossible_envoyer_ou_valider,15,15,11,😐
+2026-09-07,declaration_urssaf_bug_blocage,8,7,6,😐
+2026-09-07,facturation_electronique_activation_mandat_bloquee,39,31,3,😐
+2026-09-07,factures_electroniques_fournisseurs_non_recues,17,11,0,😐
+2026-09-07,facturation_electronique_blocage_technique_inscription,13,10,3,😐
+2026-09-07,verification_identite_echec,12,7,4,😐
+2026-09-07,connexion_synchronisation_compte_bancaire_echec,10,8,1,😐
+2026-09-07,abonnement_churn_bloquage_facture,9,8,0,😠
+2026-09-07,logo_style_documents_bug,6,6,3,😠
