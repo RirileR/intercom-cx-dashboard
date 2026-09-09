@@ -439,3 +439,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-07,connexion_synchronisation_compte_bancaire_echec,10,8,1,😐
 2026-09-07,abonnement_churn_bloquage_facture,9,8,0,😠
 2026-09-07,logo_style_documents_bug,6,6,3,😠
+2026-09-08,activation_facturation_electronique_bloquee,60,49,7,😐
+2026-09-08,avance_immediate_creation_client_bug,29,24,12,😐
+2026-09-08,facturation_electronique_problemes_techniques_blocages,19,12,7,😐
+2026-09-08,annulation_correction_facture_incomprehension,36,33,1,😐
+2026-09-08,factures_electroniques_non_recues_manquantes,32,25,1,😐
+2026-09-08,resiliation_churn_abonnement_massif,15,14,0,😐
+2026-09-08,verification_identite_refusee_bloquee,13,10,2,🙂
+2026-09-08,suppression_tva_non_applicable_bug,9,8,4,😐
