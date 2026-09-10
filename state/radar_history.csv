@@ -447,3 +447,13 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-08,resiliation_churn_abonnement_massif,15,14,0,😐
 2026-09-08,verification_identite_refusee_bloquee,13,10,2,🙂
 2026-09-08,suppression_tva_non_applicable_bug,9,8,4,😐
+2026-09-09,avance_immediate_creation_client_blocage,23,21,9,😐
+2026-09-09,avance_immediate_facturation_erreur_transmission,16,15,8,😐
+2026-09-09,comptabilite_banque_bug_synchronisation,11,10,6,😐
+2026-09-09,tva_bug_affichage_modification,9,8,5,😐
+2026-09-09,facturation_electronique_activation_mandat_blocage,31,22,1,😐
+2026-09-09,abonnement_churn_resiliation_blocage,14,10,0,😐
+2026-09-09,connexion_compte_blocage,13,6,1,😐
+2026-09-09,facturation_electronique_verification_identite_blocage,12,7,0,😐
+2026-09-09,facturation_electronique_reception_manquante,12,8,2,😐
+2026-09-09,declaration_urssaf_blocage_erreur,10,9,0,😐
