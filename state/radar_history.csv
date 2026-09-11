@@ -457,3 +457,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-09,facturation_electronique_verification_identite_blocage,12,7,0,😐
 2026-09-09,facturation_electronique_reception_manquante,12,8,2,😐
 2026-09-09,declaration_urssaf_blocage_erreur,10,9,0,😐
+2026-09-10,connexion_compte_bug,10,5,6,😐
+2026-09-10,activation_facturation_electronique_bloquee,32,26,1,😐
+2026-09-10,annulation_correction_facture_incomprehension,24,21,2,😐
+2026-09-10,facture_electronique_manquante_non_recue,21,18,0,😐
+2026-09-10,avance_immediate_activation_bug,14,14,4,😐
+2026-09-10,verification_identite_bloquee,11,5,1,😐
+2026-09-10,numerotation_facture_bug,10,6,3,🙂
+2026-09-10,synchronisation_bancaire_bug,6,6,2,😐
