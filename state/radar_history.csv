@@ -473,3 +473,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-11,rejet_facture_electronique_fournisseur,13,11,1,😐
 2026-09-11,portabilite_facturation_electronique_blocage,11,8,0,😐
 2026-09-11,synchronisation_banque_categorisation_bug,9,8,2,😐
+2026-09-12,facturation_electronique_reception_fournisseurs,19,15,2,😐
+2026-09-12,facturation_electronique_activation_mandat_blocage,17,11,2,😐
+2026-09-12,facturation_electronique_problemes_techniques_blocages,7,6,4,😐
+2026-09-12,paiement_en_ligne_bug,5,4,1,😐
+2026-09-12,suppression_compte_resiliation_abonnement,10,5,0,😐
+2026-09-12,finaliser_facture_blocage,9,5,4,😐
+2026-09-12,avance_immediate_creation_client_blocage,9,9,1,😐
+2026-09-12,correction_annulation_facture_bug,9,7,1,😐
