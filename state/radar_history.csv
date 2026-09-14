@@ -481,3 +481,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-12,finaliser_facture_blocage,9,5,4,😐
 2026-09-12,avance_immediate_creation_client_blocage,9,9,1,😐
 2026-09-12,correction_annulation_facture_bug,9,7,1,😐
+2026-09-13,facturation_electronique_activation_mandat_confusion,10,7,0,😐
+2026-09-13,annulation_correction_factures_incomprehension,10,8,0,😐
+2026-09-13,avance_immediate_facturation_bugs,8,8,1,😐
+2026-09-13,facturation_electronique_reception_manquante,7,6,0,😐
+2026-09-13,suppression_compte_churn_blocage,7,6,0,😐
+2026-09-13,avance_immediate_creation_client_blocage,6,5,4,😐
+2026-09-13,connexion_compte_blocage_suppression,5,5,1,😐
