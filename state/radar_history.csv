@@ -488,3 +488,12 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-13,suppression_compte_churn_blocage,7,6,0,😐
 2026-09-13,avance_immediate_creation_client_blocage,6,5,4,😐
 2026-09-13,connexion_compte_blocage_suppression,5,5,1,😐
+2026-09-14,facturation_electronique_problemes_techniques_blocages,26,19,7,😐
+2026-09-14,avance_immediate_creation_client_blocage,21,21,5,😐
+2026-09-14,declaration_urssaf_bug_declaration,9,3,6,😐
+2026-09-14,facturation_electronique_activation_blocage,36,24,1,😐
+2026-09-14,facturation_electronique_non_reception_fournisseurs,26,21,0,😐
+2026-09-14,churn_resiliation_suppression_compte,23,19,0,😠
+2026-09-14,connexion_compte_client_problemes,20,9,2,😐
+2026-09-14,portabilite_changement_plateforme_agreee,18,16,0,😐
+2026-09-14,paiement_stripe_paypal_bug,10,9,4,😐
