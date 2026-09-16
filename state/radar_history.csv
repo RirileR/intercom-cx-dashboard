@@ -497,3 +497,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-14,connexion_compte_client_problemes,20,9,2,😐
 2026-09-14,portabilite_changement_plateforme_agreee,18,16,0,😐
 2026-09-14,paiement_stripe_paypal_bug,10,9,4,😐
+2026-09-15,facturation_electronique_blocage_inscription_portabilite,27,20,6,😐
+2026-09-15,connexion_compte_bug,18,9,8,😐
+2026-09-15,avance_immediate_enregistrement_client_bloque,17,12,10,😐
+2026-09-15,facturation_electronique_factures_manquantes_non_recues,28,13,1,😐
+2026-09-15,annulation_correction_factures_confusion,24,20,2,😐
+2026-09-15,abonnement_churn_remboursement_resiliation,18,14,0,😐
+2026-09-15,declaration_urssaf_mandat_connexion_bug,11,8,2,😐
+2026-09-15,facturation_electronique_verification_identite_blocage,10,9,1,😐
