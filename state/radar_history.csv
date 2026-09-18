@@ -514,3 +514,11 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-16,abonnement_churn_resiliation,17,13,0,😐
 2026-09-16,facturation_electronique_verification_identite,7,6,0,😐
 2026-09-16,urssaf_mandat_tierce_declaration_bug,6,6,1,😐
+2026-09-17,facturation_electronique_blocage_technique,20,15,6,😐
+2026-09-17,avance_immediate_creation_client_bug_blocage,16,15,10,😐
+2026-09-17,facturation_creation_document_bug,9,9,8,😐
+2026-09-17,facturation_electronique_factures_manquantes_non_recues,18,13,1,😐
+2026-09-17,facturation_electronique_activation_mandat_incomprehension_massive,18,13,0,😐
+2026-09-17,abonnement_churn_resiliation_volume,18,12,0,😐
+2026-09-17,connexion_compte_bug,12,9,2,😐
+2026-09-17,avance_immediate_facturation_paiement_manquant,8,8,2,😐
