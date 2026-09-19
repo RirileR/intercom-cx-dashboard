@@ -522,3 +522,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-17,abonnement_churn_resiliation_volume,18,12,0,😐
 2026-09-17,connexion_compte_bug,12,9,2,😐
 2026-09-17,avance_immediate_facturation_paiement_manquant,8,8,2,😐
+2026-09-18,connexion_compte_bug,15,7,8,😐
+2026-09-18,creation_gestion_factures_bug,13,10,11,😐
+2026-09-18,facturation_electronique_activation_blocage,34,27,4,😐
+2026-09-18,abonnement_churn_resiliation,19,15,0,😠
+2026-09-18,facturation_electronique_problemes_techniques,11,9,3,😐
+2026-09-18,avance_immediate_creation_client_bug,11,10,4,😐
