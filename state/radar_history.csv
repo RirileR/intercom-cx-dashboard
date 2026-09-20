@@ -528,3 +528,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-18,abonnement_churn_resiliation,19,15,0,😠
 2026-09-18,facturation_electronique_problemes_techniques,11,9,3,😐
 2026-09-18,avance_immediate_creation_client_bug,11,10,4,😐
+2026-09-19,facturation_electronique_activation_blocage,14,13,0,😐
+2026-09-19,facturation_electronique_problemes_techniques,9,8,1,😐
+2026-09-19,abonnement_churn_resiliation,16,13,0,😠
+2026-09-19,correction_annulation_factures_blocage,14,12,2,😐
+2026-09-19,livre_achats_recettes_saisie_incomprehension,12,10,1,😐
+2026-09-19,abonnement_renouvellement_frais_inattendus,8,3,0,😐
