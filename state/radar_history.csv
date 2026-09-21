@@ -534,3 +534,9 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-19,correction_annulation_factures_blocage,14,12,2,😐
 2026-09-19,livre_achats_recettes_saisie_incomprehension,12,10,1,😐
 2026-09-19,abonnement_renouvellement_frais_inattendus,8,3,0,😐
+2026-09-20,factures_fournisseurs_electroniques_manquantes,13,11,0,😐
+2026-09-20,activation_facturation_electronique_blocage,10,9,0,😐
+2026-09-20,connexion_compte_bloquee,10,4,1,😐
+2026-09-20,signature_email_disparue,6,6,1,😐
+2026-09-20,avance_immediate_bugs_creation_client,6,6,3,😐
+2026-09-20,resiliation_remboursement_abonnement_litigieux,6,5,0,😠
