@@ -540,3 +540,12 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-20,signature_email_disparue,6,6,1,😐
 2026-09-20,avance_immediate_bugs_creation_client,6,6,3,😐
 2026-09-20,resiliation_remboursement_abonnement_litigieux,6,5,0,😠
+2026-09-21,avance_immediate_creation_client_erreur,15,15,7,😐
+2026-09-21,facturation_electronique_problemes_techniques_blocages,13,10,4,😐
+2026-09-21,facturation_electronique_activation_blocage,44,35,2,😐
+2026-09-21,abonnement_offre_promo_confusion_churn,21,20,0,😠
+2026-09-21,facturation_electronique_factures_fournisseurs_non_recues,14,10,0,😐
+2026-09-21,declaration_urssaf_blocage,8,8,1,😐
+2026-09-21,facturation_electronique_portabilite_societe,7,6,0,😐
+2026-09-21,compte_connexion_factures_manquantes,7,7,1,😐
+2026-09-21,factures_rib_disparu_bug,7,7,1,😐
