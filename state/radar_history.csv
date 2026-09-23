@@ -549,3 +549,10 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-21,facturation_electronique_portabilite_societe,7,6,0,😐
 2026-09-21,compte_connexion_factures_manquantes,7,7,1,😐
 2026-09-21,factures_rib_disparu_bug,7,7,1,😐
+2026-09-22,avance_immediate_creation_client_bug,17,15,7,😐
+2026-09-22,connexion_compte_bug,15,12,6,😐
+2026-09-22,verification_identite_facturation_electronique_bug,11,10,6,😐
+2026-09-22,facturation_electronique_activation_blocage,32,24,2,😐
+2026-09-22,non_reception_factures_email_bug,10,10,1,😐
+2026-09-22,facturation_electronique_problemes_techniques_blocages,6,4,1,😐
+2026-09-22,synchronisation_bancaire_bug,6,5,3,😐
