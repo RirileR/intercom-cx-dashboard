@@ -568,3 +568,13 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-24,verification_identite_factelec_echec,15,10,2,😐
 2026-09-24,logo_insertion_facture_bug,13,12,1,😐
 2026-09-24,facturation_electronique_problemes_techniques,9,9,3,😐
+2026-09-25,avance_immediate_creation_client_blocage,23,20,5,😐
+2026-09-25,facturation_electronique_problemes_techniques_blocages,12,9,5,😐
+2026-09-25,declaration_urssaf_bug_dysfonctionnement,10,7,6,😐
+2026-09-25,annulation_correction_factures_confusion,28,23,2,😐
+2026-09-25,facturation_electronique_activation_blocage,25,20,1,😐
+2026-09-25,abonnement_churn_resiliation,14,10,0,😠
+2026-09-25,facturation_electronique_verification_identite_blocage,9,7,0,😐
+2026-09-25,paiement_en_ligne_stripe_bug,9,8,1,😐
+2026-09-25,envoi_factures_email_bug,9,7,3,😐
+2026-09-25,compte_connexion_bug,9,7,3,😐
