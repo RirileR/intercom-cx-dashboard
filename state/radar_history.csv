@@ -585,3 +585,8 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-26,avance_immediate_bug_blocage,7,6,1,😐
 2026-09-26,facturation_electronique_verification_identite,5,5,1,😐
 2026-09-26,numerotation_factures_anomalie,5,5,0,😐
+2026-09-27,synchronisation_urssaf_avance_immediate_bug,9,9,6,😠
+2026-09-27,activation_facturation_electronique_bloquee,17,14,0,😐
+2026-09-27,churn_abonnement_blocages,17,16,0,😠
+2026-09-27,problemes_techniques_facturation_electronique,9,7,3,😐
+2026-09-27,verification_identite_facturation_electronique,6,6,0,😐
