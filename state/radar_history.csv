@@ -601,3 +601,13 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-28,connexion_compte_impossible,16,13,3,😐
 2026-09-28,mandat_urssaf_tierce_declaration_erreur,14,12,4,😐
 2026-09-28,banque_synchronisation_bug,10,9,4,😐
+2026-09-29,activation_facturation_electronique_blocage,30,23,7,😐
+2026-09-29,connexion_mandat_urssaf_bug,26,23,5,😐
+2026-09-29,avance_immediate_creation_client_bug,19,18,9,😐
+2026-09-29,facturation_electronique_problemes_techniques,15,15,5,😐
+2026-09-29,reinitialisation_mot_passe_bug,11,7,8,😐
+2026-09-29,annulation_correction_facture_incomprehension_massive,33,30,1,😐
+2026-09-29,prelevement_urssaf_echec_bug,10,7,4,😐
+2026-09-29,avance_immediate_facture_lien_paiement_bug,10,10,2,😐
+2026-09-29,verification_identite_facturation_electronique,9,7,0,😐
+2026-09-29,signature_electronique_bug,5,5,1,😐
