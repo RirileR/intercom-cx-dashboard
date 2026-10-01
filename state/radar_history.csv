@@ -611,3 +611,14 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-29,avance_immediate_facture_lien_paiement_bug,10,10,2,😐
 2026-09-29,verification_identite_facturation_electronique,9,7,0,😐
 2026-09-29,signature_electronique_bug,5,5,1,😐
+2026-09-30,connexion_compte_bug,15,11,13,😐
+2026-09-30,avance_immediate_creation_client_bug,11,10,6,😐
+2026-09-30,creation_devis_facture_impossible_bug,10,8,7,😠
+2026-09-30,paiement_urssaf_bug,8,8,8,😐
+2026-09-30,envoi_facture_email_bug,7,5,7,😐
+2026-09-30,telechargement_facture_bug,6,5,6,😐
+2026-09-30,facturation_electronique_activation_blocage,16,15,2,😐
+2026-09-30,facturation_electronique_problemes_techniques,13,8,1,😐
+2026-09-30,suppression_compte_bug,6,6,2,😐
+2026-09-30,signature_electronique_bug,5,4,1,😐
+2026-09-30,ajout_fournisseurs_bug,5,5,1,😐
