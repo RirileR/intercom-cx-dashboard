@@ -622,3 +622,17 @@ date,sujet,n_conv,n_users,sentiment
 2026-09-30,suppression_compte_bug,6,6,2,😐
 2026-09-30,signature_electronique_bug,5,4,1,😐
 2026-09-30,ajout_fournisseurs_bug,5,5,1,😐
+2026-10-01,declaration_urssaf_bug_validation,27,26,24,😐
+2026-10-01,paiement_prelevement_urssaf_erreur,27,25,8,😐
+2026-10-01,mandat_prelevement_urssaf_bloque,25,23,7,😐
+2026-10-01,connexion_compte_bug,19,16,15,😐
+2026-10-01,avance_immediate_creation_client_bug,17,15,8,😐
+2026-10-01,avance_immediate_facturation_bug,15,14,9,😐
+2026-10-01,facturation_electronique_activation_bloquee,27,21,3,😐
+2026-10-01,modification_annulation_facture_bloquee,16,12,0,😐
+2026-10-01,envoi_facture_email_bug,13,13,4,😠
+2026-10-01,numérotation_facture_bug,11,11,3,😐
+2026-10-01,facturation_electronique_verification_identite_bloquee,10,9,1,😐
+2026-10-01,facturation_electronique_transfert_technique_bloque,10,5,1,😐
+2026-10-01,declaration_urssaf_calcul_incorrect,10,9,4,😐
+2026-10-01,synchronisation_banque_bug,9,9,3,😐
